@@ -1,0 +1,38 @@
+{
+    "name": "gahcep.com",
+    "description": "Custom weblog based on Node.js, Koa and Backbone.js technology",
+    "version": "0.0.1",
+    "author": "Sergei Danielian <promdev@gmail.com>",
+
+
+    "scripts": {
+        "start": "node --harmony index.js"
+    },
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gahcep/github.com"
+    },
+    "bugs": {
+        "url": "https://github.com/gahcep/github.com/issues"
+    },
+    "keywords": [
+        "nodejs",
+        "koa",
+        "bootstrap",
+        "grunt",
+        "backbone"
+    ],
+
+    "dependencies": {
+        "koa": "^0.12.2"
+    },
+
+    "devDependencies" : {
+
+    },
+
+    "preferGlobal": false,
+    "private": true,
+    "license": "MIT"
+}
