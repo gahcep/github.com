@@ -2,4 +2,8 @@
 .idea
 
 # Node.js
-node_modules/
+node_modules
+
+# Project dirs
+dist
+generated
