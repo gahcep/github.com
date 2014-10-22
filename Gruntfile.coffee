@@ -1,5 +1,7 @@
 module.exports = (grunt) ->
 
+  require('time-grunt')(grunt)
+
   # Initializing task configuration
   grunt.initConfig
 
@@ -35,8 +37,22 @@ module.exports = (grunt) ->
         separator: ';'
 
       js:
-        src: ["<%= files.js.vendor %>", "<%= files.js.src %>"]
+        src: [
+          "<%= files.js.vendor %>",
+          "<%= files.js.src %>"
+        ]
         dest: "dist/js/<%= pkg.name %>.js"
+
+#    concat-sourcemap:
+#      options:
+#        sourcesContent: true
+
+#      js:
+#        src: [
+#          "<%= files.js.vendor %>",
+#          "<%= files.js.src %>"
+#        ]
+#        dest: "dist/js/<%= pkg.name %>.js"
 
     newer:
       timestamps: "generated/compilation-timestamps"
@@ -47,7 +63,7 @@ module.exports = (grunt) ->
 
       html:
         files: ["<%= files.html.src %>"]
-        tasks: ["copy"]
+        tasks: ["newer:copy"]
 
       js:
         files: ["<%= files.js.src %>"]
@@ -99,20 +115,9 @@ module.exports = (grunt) ->
   # Loading local tasks
   grunt.loadTasks("tasks")
 
-  # Loading external tasks (plugins)
-#  grunt.loadNpmTasks("grunt-contrib-concat")
-#  grunt.loadNpmTasks("grunt-contrib-jshint")
-#  grunt.loadNpmTasks("grunt-contrib-uglify")
-#  grunt.loadNpmTasks("grunt-contrib-watch")
-#  grunt.loadNpmTasks("grunt-contrib-less")
-#  grunt.loadNpmTasks("grunt-contrib-copy")
-#  grunt.loadNpmTasks("grunt-contrib-clean")
-#  grunt.loadNpmTasks("grunt-open")
-  require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks)
+  # Loading Grunt tasks (plugins)
+  require('load-grunt-tasks')(grunt)
 
   # Creating workflow
-  grunt.registerTask("minify", ["newer:uglify"])
-  grunt.registerTask("lint", ["newer:jshint"])
-
-  grunt.registerTask("default", ["less:dev", "lint", "concat", "minify", "copy", "watch"])
-  grunt.registerTask("build", ["clean", "less:prod", "concat", "minify", "copy"])
+  grunt.registerTask("default", ["less:dev", "jshint", "concat", "uglify", "newer:copy", "watch"])
+  grunt.registerTask("build", ["clean", "less:prod", "concat", "uglify", "newer:copy"])
