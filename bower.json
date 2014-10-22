@@ -1,0 +1,30 @@
+{
+  "name": "gahcep.com",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gahcep/github.com",
+  "authors": [
+    "Sergei Danielian <promdev@gmail.com>"
+  ],
+  "description": "Custom weblog based on Node.js, Koa and Backbone.js technology",
+  "main": "index.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "nodejs",
+    "koa",
+    "bootstrap",
+    "grunt",
+    "backbone"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower_modules",
+    "test",
+    "tests"
+  ]
+}

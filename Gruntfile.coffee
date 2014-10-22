@@ -22,7 +22,7 @@ module.exports = (grunt) ->
         src: ["app/css/style.less"]
 
       js:
-        # Vendor source "app/vendor/js/..."
+        # Vendor source "/bower_modules/..."
         vendor: []
 
         # Custom source "app/js/..."
