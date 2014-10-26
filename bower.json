@@ -26,5 +26,10 @@
     "bower_modules",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.15"
+  }
 }
