@@ -63,6 +63,7 @@ define(function(require, exports, module){
         renderItem: function(model){
             model.view = new ItemView({ model: model });
             this.$('#list').prepend( model.view.render() );
+            this.$('#count').text(this.collection.length);
         },
 
         createItem: function(){
@@ -70,7 +71,7 @@ define(function(require, exports, module){
 
             // Create a new Comment Model with the data in the form
             var item = {
-                content: "New Item"
+
             };
             // The `validate` option ensures that empty comments aren't added
             this.collection.add( item );
