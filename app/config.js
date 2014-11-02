@@ -1,6 +1,6 @@
 require.config({
 
-    urlArgs: "bust=" +  (new Date()).getTime(),
+    //urlArgs: "bust=" +  (new Date()).getTime(),
 
     //enforceDefine: true,
 
@@ -13,7 +13,16 @@ require.config({
     paths: {
         jquery: "../bower_modules/jquery/dist/jquery",
         backbone: "../bower_modules/backbone/backbone",
-        underscore: "../bower_modules/underscore/underscore"
+        underscore: "../bower_modules/underscore/underscore",
+        handlebars: "../bower_modules/handlebars/handlebars.amd",
+        'handlebars.runtime': "../bower_modules/handlebars/handlebars.runtime.amd",
+        hbs: "../bower_modules/require-handlebars-plugin/hbs"
+    },
+
+    hbs: {
+        helpers: true,            // default: true
+        i18n: false,              // default: false
+        templateExtension: 'hbs', // default: 'hbs'
     },
 
     /*
