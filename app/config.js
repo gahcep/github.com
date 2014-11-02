@@ -6,7 +6,7 @@ require.config({
 
     waitSeconds: 20,
 
-    deps: ['main'],
+    deps: ['app'],
 
     //baseUrl: "../bower_modules",
 
